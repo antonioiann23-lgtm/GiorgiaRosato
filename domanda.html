@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dunque...</title>
+
+    <link rel="stylesheet" href="domanda.css">
+
+</head>
+
+<body>
+
+    <main class="domanda">
+
+        <!-- PREAMBOLO -->
+
+        <section id="preambolo" class="preambolo">
+
+            <p>
+                Dunque...
+            </p>
+
+            <p>
+                dalle premesse fatte siamo arrivati al dunque.
+            </p>
+
+            <p>
+                E credimi, pur avendoci perso la testa,
+                <br>
+                non ho idea di come si faccia.
+            </p>
+
+        </section>
+
+
+        <!-- CHATBOT -->
+
+        <section id="chat" class="chat">
+
+            <div class="chat-header">
+
+                <div class="chat-logo">
+                    ✦
+                </div>
+
+                <div>
+                    <strong>Chat</strong>
+
+                    <span>
+                        assistente personale
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="chat-messaggi">
+
+                <!-- MESSAGGIO UTENTE -->
+
+                <div class="messaggio utente">
+
+                    <div class="messaggio-nome">
+                        Tu
+                    </div>
+
+                    <div id="domanda-chat" class="fumetto">
+                    </div>
+
+                </div>
+
+
+                <!-- RISPOSTA CHAT -->
+
+                <div class="messaggio assistente">
+
+                    <div class="messaggio-nome">
+                        Chat
+                    </div>
+
+                    <div id="risposta-chat" class="fumetto risposta">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCELTA FINALE -->
+
+            <div id="scelta" class="scelta">
+
+                <p>
+                    Scegli tu quella che ti piace di più,
+                    <br>
+                    la sostanza è la stessa.
+                </p>
+
+                <div class="bottoni">
+
+                    <button
+                        id="si"
+                        class="bottone-si"
+                    >
+                        Sì
+                    </button>
+
+                    <button
+                        id="no"
+                        class="bottone-no"
+                    >
+                        No
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- POPUP ERRORE -->
+
+        <div id="errore" class="errore">
+
+            <div class="errore-box">
+
+                <div class="errore-icon">
+                    !
+                </div>
+
+                <p id="errore-testo">
+                    Risposta non valida.
+                </p>
+
+                <button id="chiudi-errore">
+                    ok
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="domanda.js"></script>
+
+</body>
+
+</html>

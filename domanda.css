@@ -1,0 +1,583 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: #f8f3f0;
+
+    color: #3d3431;
+}
+
+
+/* =========================================
+   PAGINA
+========================================= */
+
+.domanda {
+    min-height: 100vh;
+
+    padding: 70px 20px 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   PREAMBOLO
+========================================= */
+
+.preambolo {
+    width: 100%;
+    max-width: 600px;
+
+    text-align: center;
+
+    animation: comparsa 1.2s ease;
+
+    margin-bottom: 70px;
+}
+
+.preambolo p {
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    margin: 0 0 25px;
+}
+
+.preambolo p:first-child {
+    font-size: 12px;
+
+    font-family: Arial, sans-serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #a18d87;
+
+    margin-bottom: 35px;
+}
+
+.preambolo p:last-child {
+    color: #6f5d57;
+}
+
+
+/* =========================================
+   CHAT
+========================================= */
+
+.chat {
+    width: 100%;
+
+    max-width: 650px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.chat.visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   HEADER CHAT
+========================================= */
+
+.chat-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #e5dcd8;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border-radius: 15px 15px 0 0;
+}
+
+.chat-logo {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d9b7a9;
+
+    color: white;
+
+    font-size: 18px;
+}
+
+.chat-header strong {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: normal;
+}
+
+.chat-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    color: #a18d87;
+}
+
+
+/* =========================================
+   AREA MESSAGGI
+========================================= */
+
+.chat-messaggi {
+    padding: 30px 20px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    border-radius: 0 0 15px 15px;
+}
+
+
+/* =========================================
+   MESSAGGIO
+========================================= */
+
+.messaggio {
+    margin-bottom: 30px;
+
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+}
+
+.messaggio.visibile {
+    opacity: 1;
+}
+
+.messaggio-nome {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #a18d87;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   FUMETTI
+========================================= */
+
+.fumetto {
+    display: inline-block;
+
+    max-width: 90%;
+
+    padding: 15px 18px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(70, 50, 45, 0.07);
+}
+
+.utente {
+    text-align: right;
+}
+
+.utente .fumetto {
+    text-align: left;
+
+    background: #e8d7d0;
+}
+
+.assistente {
+    text-align: left;
+}
+
+.assistente .fumetto {
+    background: white;
+}
+
+
+/* =========================================
+   CURSORE DI SCRITTURA
+========================================= */
+
+.typing::after {
+    content: "|";
+
+    animation: cursore 0.8s infinite;
+}
+
+@keyframes cursore {
+
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   RISPOSTE CHAT
+========================================= */
+
+.risposta-lista {
+    margin: 0;
+
+    padding-left: 22px;
+}
+
+.risposta-lista li {
+    margin-bottom: 16px;
+
+    padding-left: 4px;
+
+    line-height: 1.6;
+}
+
+.risposta-introduzione {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   SCELTA
+========================================= */
+
+.scelta {
+    text-align: center;
+
+    margin-top: 50px;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.scelta.visibile {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+.scelta p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #6f5d57;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BOTTONI
+========================================= */
+
+.bottoni {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.bottoni button {
+    border: none;
+
+    padding: 13px 30px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* SI */
+
+.bottone-si {
+    background: #3d3431;
+
+    color: white;
+}
+
+.bottone-si:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(61, 52, 49, 0.2);
+}
+
+
+/* NO */
+
+.bottone-no {
+    background: transparent;
+
+    color: #9a8580;
+
+    border: 1px solid #d5c6c0 !important;
+}
+
+.bottone-no:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   POPUP ERRORE
+========================================= */
+
+.errore {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(61, 52, 49, 0.18);
+
+    backdrop-filter: blur(3px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 100;
+}
+
+.errore.visibile {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================
+   BOX ERRORE
+========================================= */
+
+.errore-box {
+    width: calc(100% - 40px);
+
+    max-width: 350px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #f8f3f0;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(61, 52, 49, 0.2);
+
+    animation: popup 0.3s ease;
+}
+
+.errore-icon {
+    width: 35px;
+    height: 35px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d9b7a9;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+}
+
+.errore-box p {
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #5e4f4a;
+
+    margin: 0 0 20px;
+}
+
+.errore-box button {
+    border: none;
+
+    background: #3d3431;
+
+    color: white;
+
+    padding: 9px 22px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   ANIMAZIONI
+========================================= */
+
+@keyframes comparsa {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.9);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .domanda {
+        padding: 50px 15px 80px;
+    }
+
+    .preambolo {
+        margin-bottom: 50px;
+    }
+
+    .preambolo p {
+        font-size: 18px;
+    }
+
+    .chat-messaggi {
+        padding: 25px 15px;
+    }
+
+    .fumetto {
+        max-width: 95%;
+
+        font-size: 15px;
+    }
+
+    .scelta p {
+        font-size: 17px;
+    }
+
+}

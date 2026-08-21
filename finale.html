@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Firmiamo?</title>
+
+    <link rel="stylesheet" href="finale.css">
+
+</head>
+
+<body>
+
+    <main class="finale">
+
+        <section class="firma-contenuto">
+
+            <!-- FOTO -->
+
+            <div class="documento">
+
+                <img
+                    src="Images/us.jpeg"
+                    alt="Il nostro momento"
+                    class="immagine-finale"
+                    id="immagine-finale"
+                >
+
+                <!-- SECONDA FIRMA, NASCOSTA ALL'INIZIO -->
+
+                <img
+                    src="Images/firmag-removebg-preview.png"
+                    alt="Firma"
+                    class="firma-g"
+                    id="firma-g"
+                >
+
+            </div>
+
+
+            <!-- RICHIESTA DI FIRMA -->
+
+            <div
+                class="firma-azione"
+                id="firma-azione"
+            >
+
+                <div
+                    class="x-firma"
+                    id="x-firma"
+                >
+                    ×
+                </div>
+
+                <p>
+                    premi per firmare
+                </p>
+
+            </div>
+
+
+            <!-- RISULTATO -->
+
+            <div
+                class="risultato"
+                id="risultato"
+            >
+
+                <p class="firmato">
+                    Firmato.
+                </p>
+
+                <button
+                    id="salva-pdf"
+                    class="salva-pdf"
+                >
+                    salva il nostro accordo
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="finale.js"></script>
+
+</body>
+
+</html>

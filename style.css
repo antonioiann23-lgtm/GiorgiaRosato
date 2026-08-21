@@ -1,0 +1,581 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background: #f8f3f0;
+    color: #3d3431;
+}
+
+
+/* =========================================
+   PAGINA
+========================================= */
+
+.pagina {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================================
+   CONTENUTO
+========================================= */
+
+.contenuto {
+    width: 100%;
+    max-width: 500px;
+
+    text-align: center;
+
+    animation: comparsa 1.2s ease;
+}
+
+
+/* =========================================
+   PICCOLA INTRODUZIONE
+========================================= */
+
+.piccola-introduzione {
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #9a8580;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   FOTO PAGINA INIZIALE
+========================================= */
+
+.foto {
+    width: 220px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 110px 110px 20px 20px;
+
+    box-shadow:
+        0 15px 40px rgba(70, 50, 45, 0.15);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   TITOLI
+========================================= */
+
+h1 {
+    font-size: 38px;
+    font-weight: normal;
+
+    margin: 0 0 25px;
+}
+
+
+/* =========================================
+   TESTO GENERALE
+========================================= */
+
+.testo {
+    font-size: 19px;
+    line-height: 1.7;
+
+    margin: 10px auto;
+
+    max-width: 420px;
+}
+
+
+/* =========================================
+   BOTTONE GENERALE
+========================================= */
+
+.bottone {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 24px;
+
+    border-radius: 50px;
+
+    background: #3d3431;
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.bottone span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+.bottone:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(61, 52, 49, 0.2);
+}
+
+
+/* =========================================
+   ANIMAZIONE COMPARSA
+========================================= */
+
+@keyframes comparsa {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   PAGINA STORIA
+========================================= */
+
+.storia {
+    min-height: 100vh;
+
+    padding: 70px 25px 100px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.storia-contenuto {
+    width: 100%;
+    max-width: 620px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* =========================================
+   FOTO DELLA STORIA
+========================================= */
+
+.foto-storia {
+    width: 190px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 95px 95px 15px 15px;
+
+    box-shadow:
+        0 15px 40px rgba(70, 50, 45, 0.14);
+
+    margin-bottom: 35px;
+
+    animation: comparsa 1.2s ease;
+}
+
+
+/* =========================================
+   CAPITOLO
+========================================= */
+
+.capitolo {
+    font-family: Arial, sans-serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+
+    color: #a18d87;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   TESTO STORIA
+========================================= */
+
+.testo-storia {
+    text-align: left;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    color: #3d3431;
+}
+
+.testo-storia p {
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   TESTO DINAMICO
+========================================= */
+
+#testo1,
+#testo2,
+#testo3 {
+    min-height: 0;
+}
+
+
+/* =========================================
+   PONZA
+========================================= */
+
+.ponza {
+    display: none;
+
+    text-align: center;
+
+    margin: 55px 0;
+}
+
+
+/* =========================================
+   MAPPA DI PONZA
+========================================= */
+
+.ponza-mappa {
+    width: 260px;
+    height: 190px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 30px rgba(70, 50, 45, 0.12);
+
+    opacity: 0.92;
+}
+
+.ponza-mappa img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: sepia(15%) contrast(90%);
+
+    transition: transform 8s ease;
+}
+
+.ponza:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   TESTO SOTTO LA MAPPA
+========================================= */
+
+.ponza p {
+    font-size: 15px;
+
+    font-style: italic;
+
+    color: #8d7973;
+
+    margin-top: 18px;
+    margin-bottom: 5px;
+}
+
+.ponza-piccola {
+    font-size: 13px !important;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================
+   CONTINUA
+========================================= */
+
+.continua {
+    margin-top: 80px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.continua.visibile {
+    opacity: 1;
+}
+
+
+/* =========================================
+   FRECCIA
+========================================= */
+
+.freccia {
+    font-size: 25px;
+
+    animation: movimento 1.5s infinite;
+}
+
+
+/* =========================================
+   TESTO "SCORRI PER CONTINUARE"
+========================================= */
+
+.continua > p {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #a18d87;
+}
+
+
+/* =========================================
+   LINEA
+========================================= */
+
+.linea-scroll {
+    width: 1px;
+
+    height: 50px;
+
+    background: #b7a7a1;
+
+    margin: 15px auto 0;
+}
+
+
+/* =========================================
+   CONTENITORE TORTA
+========================================= */
+
+.dolcetto-container {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   LINK DELLA TORTA
+========================================= */
+
+.dolcetto {
+    display: block;
+
+    width: 270px;
+
+    text-decoration: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 1s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================
+   QUANDO LA STORIA È FINITA
+========================================= */
+
+.continua.visibile .dolcetto {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   IMMAGINE DELLA TORTA
+========================================= */
+
+.dolcetto img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 18px rgba(70, 50, 45, 0.15)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* =========================================
+   HOVER TORTA
+========================================= */
+
+.dolcetto:hover img {
+    transform: translateY(-6px) rotate(-1deg);
+
+    filter:
+        drop-shadow(
+            0 15px 25px rgba(70, 50, 45, 0.22)
+        );
+}
+
+
+/* =========================================
+   PICCOLA SCRITTA EXIT
+========================================= */
+
+.exit-info {
+    margin-top: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px !important;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.5px;
+
+    text-transform: none !important;
+
+    color: #b2a39e !important;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================
+   ANIMAZIONE FRECCIA
+========================================= */
+
+@keyframes movimento {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+/* =========================================
+   EXIT
+========================================= */
+
+.exit {
+    position: fixed;
+
+    bottom: 15px;
+    right: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    color: #b2a39e;
+
+    opacity: 0.6;
+
+    transition: all 0.3s ease;
+}
+
+.exit:hover {
+    opacity: 1;
+
+    color: #5e4f4a;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .storia {
+        padding: 50px 22px 100px;
+    }
+
+    .foto-storia {
+        width: 165px;
+        height: 210px;
+    }
+
+    .testo-storia {
+        font-size: 18px;
+
+        line-height: 1.85;
+    }
+
+    .dolcetto {
+        width: 240px;
+    }
+
+}
