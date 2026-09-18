@@ -1,4 +1,4 @@
-const PASSWORD = "Giorgia18";
+const PASSWORD = "sunflower";
 
 document.addEventListener("DOMContentLoaded", function () {
 
