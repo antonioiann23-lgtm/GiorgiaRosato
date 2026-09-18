@@ -1,80 +1,77 @@
-(function () {
-    const PASSWORD = "sunflower";
-    const ACCESS_KEY = "giorgia_site_access";
+const PASSWORD = "Giorgia18";
 
-    // Se l'accesso è già stato autorizzato in questa sessione,
-    // lascia visualizzare normalmente la pagina.
-    if (sessionStorage.getItem(ACCESS_KEY) === "true") {
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Controlla se abbiamo già effettuato l'accesso
+    if (sessionStorage.getItem("giorgia_access") === "true") {
         return;
     }
 
-    // Nasconde temporaneamente il contenuto della pagina
-    document.documentElement.style.visibility = "hidden";
+    // Crea la schermata
+    const overlay = document.createElement("div");
 
-    function createPasswordScreen() {
-        document.documentElement.style.visibility = "visible";
+    overlay.id = "password-screen";
 
-        const overlay = document.createElement("div");
+    overlay.innerHTML = `
+        <div class="password-box">
 
-        overlay.id = "password-screen";
+            <div class="password-heart">❤️</div>
 
-        overlay.innerHTML = `
-            <div class="password-box">
-                <div class="password-heart">❤️</div>
+            <h1>Un piccolo segreto...</h1>
 
-                <h1>Un piccolo segreto...</h1>
+            <p>Inserisci la password per entrare</p>
 
-                <p>Inserisci la password per entrare</p>
+            <input
+                type="password"
+                id="password-input"
+                placeholder="Password"
+                autocomplete="off"
+            >
 
-                <input
-                    type="password"
-                    id="password-input"
-                    placeholder="Password"
-                    autocomplete="off"
-                >
+            <button id="password-button">
+                Entra
+            </button>
 
-                <button id="password-button">
-                    Entra
-                </button>
+            <div id="password-error"></div>
 
-                <div id="password-error"></div>
-            </div>
-        `;
+        </div>
+    `;
 
-        document.body.appendChild(overlay);
+    document.body.appendChild(overlay);
 
-        const input = document.getElementById("password-input");
-        const button = document.getElementById("password-button");
-        const error = document.getElementById("password-error");
+    const input = document.getElementById("password-input");
+    const button = document.getElementById("password-button");
+    const error = document.getElementById("password-error");
 
-        function checkPassword() {
-            if (input.value === PASSWORD) {
-                sessionStorage.setItem(ACCESS_KEY, "true");
+    function checkPassword() {
 
-                overlay.remove();
+        if (input.value === PASSWORD) {
 
-                document.body.classList.remove("password-locked");
-            } else {
-                error.textContent = "Password non corretta ❤️";
-                input.value = "";
-                input.focus();
-            }
+            sessionStorage.setItem("giorgia_access", "true");
+
+            overlay.remove();
+
+        } else {
+
+            error.textContent = "Password non corretta ❤️";
+
+            input.value = "";
+
+            input.focus();
+
+        }
+    }
+
+    button.addEventListener("click", checkPassword);
+
+    input.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            checkPassword();
         }
 
-        button.addEventListener("click", checkPassword);
+    });
 
-        input.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                checkPassword();
-            }
-        });
+    input.focus();
 
-        input.focus();
-    }
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", createPasswordScreen);
-    } else {
-        createPasswordScreen();
-    }
-})();
+});
